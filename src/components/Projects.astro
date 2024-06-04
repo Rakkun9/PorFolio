@@ -1,0 +1,55 @@
+---
+import HTML5 from "../icons/HTML.astro";
+import CSS from "../icons/CSS.astro";
+
+const TAGS = {
+  HTML: {
+    name: "HTML5",
+    class: "bg-[#E34C26] text-white",
+    icon: HTML5,
+  },
+  CSS: {
+    name: "CSS",
+    class: "bg-[#264de4] text-white",
+    icon: CSS,
+  },
+};
+const PROJECTS = [
+  {
+    title: "Prueba proyecto iconos SVGL",
+    description:
+      "ontrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia",
+    link: "https://tabler.io/icons",
+    github: "https://github.com/tabler/tabler-icons",
+    image: "/projects/vglProyecto1.webp",
+    tags: [TAGS.HTML, TAGS.CSS],
+  },
+];
+---
+
+{
+  PROJECTS.map(({ title, description, tags, image }) => (
+    <article>
+      <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+      <p class="text-lg mb-4 text-pretty">{description}</p>
+      <ul class="flex gap-x-2 flex-row mb-2">
+        {tags.map((tag) => (
+          <li>
+            
+            <span
+              class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}
+            >
+              <tag.icon class="size-4"/>
+              {tag.name}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <img
+        class="rounded shadow-2xl shadow-white/10"
+        src={image}
+        alt={`captura de pantalla del proyecto ${title}`}
+      />
+    </article>
+  ))
+}
