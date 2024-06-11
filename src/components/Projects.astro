@@ -1,6 +1,10 @@
 ---
 import HTML5 from "../icons/HTML.astro";
 import CSS from "../icons/CSS.astro";
+import JAVA from "../icons/JAVA.astro"; 
+import SPRING from "../icons/SPRING.astro"; 
+import MYSQL from "../icons/MYSQL.astro"; 
+import JAVASCRIPT from "../icons/JAVASCRIPT.astro";
 
 const TAGS = {
   HTML: {
@@ -13,16 +17,36 @@ const TAGS = {
     class: "bg-[#264de4] text-white",
     icon: CSS,
   },
+  JAVA: {
+    name: "JAVA",
+    class: "bg-[#d52c24] text-white",
+    icon: JAVA,
+  },
+  SPRING: {
+    name: "SPRING",
+    class: "bg-[#234D13] text-white",
+    icon: SPRING,
+  },
+  MYSQL: {
+    name: "MYSQL",
+    class: "bg-[#040E20] text-white",
+    icon: MYSQL,
+  },
+  JAVASCRIPT: {
+    name: "JAVASCRIPT",
+    class: "bg-[#D3C943] text-white",
+    icon: JAVASCRIPT,
+  }
 };
 const PROJECTS = [
   {
-    title: "Prueba proyecto iconos SVGL",
+    title: "Control De Usuarios",
     description:
-      "ontrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia",
+      "Una aplicación web hecha en Java con Spring donde permite mostrar usuarios con items. Control de usuarios es una API REST donde funciona mediante un modelo vista controlador, se realizó con tokenización JWT y autentificación de usuario. Por parte del Font el tratamiento de los datos se recibió y se trato mediante JavaScript, se usó una plantilla por parte de los estilos y estructura HTML ",
     link: "https://tabler.io/icons",
     github: "https://github.com/tabler/tabler-icons",
     image: "/projects/vglProyecto1.webp",
-    tags: [TAGS.HTML, TAGS.CSS],
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.JAVA, TAGS.SPRING, TAGS.MYSQL],
   },
 ];
 ---
@@ -32,7 +56,7 @@ const PROJECTS = [
     <article>
       <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
       <p class="text-lg mb-4 text-pretty">{description}</p>
-      <ul class="flex gap-x-2 flex-row mb-2">
+      <ul class="flex gap-x-2 flex-row mb-8">
         {tags.map((tag) => (
           <li>
             
