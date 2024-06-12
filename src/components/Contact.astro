@@ -1,5 +1,10 @@
+---
+
+
+---
+
 <section>
-  <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+  <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md" >
     <h2
       class="mb-4 text-4xl tracking-tight font-extrabold text-center text-white"
     >
@@ -12,13 +17,14 @@
       <span class="text-sky-200/80"> ¿Necesitas más información? </span> ¡Ponte en
       contacto conmigo!
     </p>
-    <form action="#" class="space-y-8">
+    <form action="https://formspree.io/f/meqyykbz" class="space-y-8" method="POST" >
       <div>
         <label for="email" class="block mb-2 text-sm font-medium text-white"
           >Correo</label
         >
         <input
           type="email"
+          name = "email"
           id="email"
           class="shadow-sm bg-[#091723] border border-[#2A4979] text-white text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
           placeholder="Nombre@mail.com"
@@ -42,6 +48,7 @@
           >Mensaje</label
         >
         <textarea
+          name="message"
           id="message"
           rows="6"
           class="block p-2.5 w-full text-sm text-white bg-[#091723] rounded-lg shadow-sm border border-[#2A4979] focus:ring-primary-500 focus:border-primary-500"
@@ -55,3 +62,4 @@
     </form>
   </div>
 </section>
+

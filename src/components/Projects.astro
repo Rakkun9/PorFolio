@@ -1,10 +1,11 @@
 ---
 import HTML5 from "../icons/HTML.astro";
 import CSS from "../icons/CSS.astro";
-import JAVA from "../icons/JAVA.astro"; 
-import SPRING from "../icons/SPRING.astro"; 
-import MYSQL from "../icons/MYSQL.astro"; 
+import JAVA from "../icons/JAVA.astro";
+import SPRING from "../icons/SPRING.astro";
+import MYSQL from "../icons/MYSQL.astro";
 import JAVASCRIPT from "../icons/JAVASCRIPT.astro";
+import PHP from "../icons/PHP.astro";
 
 const TAGS = {
   HTML: {
@@ -36,17 +37,38 @@ const TAGS = {
     name: "JAVASCRIPT",
     class: "bg-[#D3C943] text-white",
     icon: JAVASCRIPT,
-  }
+  },
+  PHP: {
+    name: "PHP",
+    class: "bg-[#2C14A9] text-white",
+    icon: PHP,
+  },
 };
 const PROJECTS = [
   {
     title: "Control De Usuarios",
     description:
-      "Una aplicación web hecha en Java con Spring donde permite mostrar usuarios con items. Control de usuarios es una API REST donde funciona mediante un modelo vista controlador, se realizó con tokenización JWT y autentificación de usuario. Por parte del Font el tratamiento de los datos se recibió y se trato mediante JavaScript, se usó una plantilla por parte de los estilos y estructura HTML ",
+      "Una aplicación web desarrollada en Java con Spring que permite mostrar usuarios junto con sus ítems. El control de usuarios se gestiona a través de una API REST, implementada mediante un modelo Vista-Controlador (MVC). Se utilizó tokenización JWT para la autenticación de usuarios. En el frontend, el tratamiento y la recepción de datos se realizaron utilizando JavaScript, empleando una plantilla para los estilos y la estructura HTML.",
     link: "https://tabler.io/icons",
     github: "https://github.com/tabler/tabler-icons",
+    image: "/projects/vglProyecto2.webp",
+    tags: [
+      TAGS.HTML,
+      TAGS.CSS,
+      TAGS.JAVASCRIPT,
+      TAGS.JAVA,
+      TAGS.SPRING,
+      TAGS.MYSQL,
+    ],
+  },
+  {
+    title: "AnimeTalks",
+    description:
+      "Una página web dedicada a la creación y publicación de artículos relacionados con el anime. Los usuarios tienen la capacidad de registrarse, eliminar su cuenta, actualizar su contraseña e iniciar sesión nuevamente. La página web fue desarrollada utilizando HTML, CSS, JavaScript, PHP, PHPMyAdmin y MySQL. PHP se empleó para realizar consultas a la base de datos, mientras que los demás componentes se utilizaron para desarrollar las funcionalidades básicas del sitio web.",
+    link: "https://animetalksforum.000webhostapp.com/AnimeTalks/index.php",
+    github: "https://github.com/Rakkun9/AnimeTalks",
     image: "/projects/vglProyecto1.webp",
-    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.JAVA, TAGS.SPRING, TAGS.MYSQL],
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.PHP, TAGS.MYSQL],
   },
 ];
 ---
@@ -54,16 +76,17 @@ const PROJECTS = [
 {
   PROJECTS.map(({ title, description, tags, image }) => (
     <article>
-      <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+      <h3 class="text-2xl font-semibold text-yellow-200 mb-2 mt-10 ">
+        {title}
+      </h3>
       <p class="text-lg mb-4 text-pretty">{description}</p>
       <ul class="flex gap-x-2 flex-row mb-8">
         {tags.map((tag) => (
           <li>
-            
             <span
               class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}
             >
-              <tag.icon class="size-4"/>
+              <tag.icon class="size-4" />
               {tag.name}
             </span>
           </li>
