@@ -16,7 +16,7 @@ const { description, title } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
@@ -43,13 +43,19 @@ const { description, title } = Astro.props;
   }
   html {
     font-family: "Onest Variable", system-ui, sans-serif;
+<<<<<<< HEAD
     scroll-behavior: smooth;
+=======
+	scroll-behavior: smooth;
+
+>>>>>>> 30ad8ad9f76d8cf1613c0a799be8a368e6f00b74
   }
   body {
     background-color: #050505;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    color:#fff
   }
   @media (prefers-reduced motion: reduce) {
     html {
