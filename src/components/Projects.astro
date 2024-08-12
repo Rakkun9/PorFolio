@@ -6,8 +6,46 @@ import SPRING from "../icons/SPRING.astro";
 import MYSQL from "../icons/MYSQL.astro";
 import JAVASCRIPT from "../icons/JAVASCRIPT.astro";
 import PHP from "../icons/PHP.astro";
+import ASTRO from "../icons/ASTRO.astro";
+import GEMINI from "../icons/GEMINI.astro";
+import NODEJS from "../icons/NODEJS.astro";
+import TAILWIND from "../icons/TAILWIND.astro";
+import VERCEL from "../icons/VERCEL.astro";
+import TYPESCRIPT from "../icons/TYPESCRIPT.astro";
 
 const TAGS = {
+  TYPESCRIPT: {
+    name: "TYPESCRIPT",
+    class: "bg-[#0b488b] text-white",
+    icon: TYPESCRIPT,
+  },
+
+  VERCEL: {
+    name: "VERCEL",
+    class: "bg-[#232020] text-white",
+    icon: VERCEL,
+  },
+
+  ASTRO: {
+    name: "ASTRO",
+    class: "bg-[#232020] text-white",
+    icon: ASTRO,
+  },
+  GEMINI: {
+    name: "GEMINI",
+    class: "bg-[#1f4b16] text-white",
+    icon: GEMINI,
+  },
+  NODEJS: {
+    name: "NODEJS",
+    class: "bg-[#8CC84B] text-white",
+    icon: NODEJS,
+  },
+  TAILWIND: {
+    name: "TAILWIND",
+    class: "bg-[#286360] text-white",
+    icon: TAILWIND,
+  },
   HTML: {
     name: "HTML5",
     class: "bg-[#E34C26] text-white",
@@ -46,10 +84,30 @@ const TAGS = {
 };
 const PROJECTS = [
   {
+    title: "TranslaSite",
+    description:
+      "TranslaSite es una plataforma impulsada por inteligencia artificial que ofrece traducciones rápidas y precisas de textos e imágenes. Utilizando la tecnología avanzada de Gemini-Flash, asegura que las traducciones mantengan el sentido y matices originales. La interfaz es minimalista e intuitiva, ideal para usuarios de todos los niveles que buscan romper barreras lingüísticas de manera sencilla y eficiente.",
+    link: "https://tabler.io/icons",
+    github: "https://github.com/tabler/tabler-icons",
+    image: "/projects/vglProyecto3.webp",
+    tags: [
+      TAGS.HTML,
+      TAGS.CSS,
+      TAGS.JAVASCRIPT,
+      TAGS.TAILWIND,
+      TAGS.NODEJS,
+      TAGS.TYPESCRIPT,
+      TAGS.JAVASCRIPT,
+      TAGS.ASTRO,
+      TAGS.GEMINI,
+      TAGS.VERCEL,
+    ],
+  },
+  {
     title: "Control De Usuarios",
     description:
       "Una aplicación web desarrollada en Java con Spring que permite mostrar usuarios junto con sus ítems. El control de usuarios se gestiona a través de una API REST, implementada mediante un modelo Vista-Controlador (MVC). Se utilizó tokenización JWT para la autenticación de usuarios. En el frontend, el tratamiento y la recepción de datos se realizaron utilizando JavaScript, empleando una plantilla para los estilos y la estructura HTML.",
-    link: "https://tabler.io/icons",
+    link: "",
     github: "https://github.com/tabler/tabler-icons",
     image: "/projects/vglProyecto2.webp",
     tags: [
@@ -98,5 +156,5 @@ const PROJECTS = [
         alt={`captura de pantalla del proyecto ${title}`}
       />
     </article>
-))  
+  ))
 }
