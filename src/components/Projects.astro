@@ -150,11 +150,13 @@ const PROJECTS = [
           </li>
         ))}
       </ul>
-      <img
-        class="rounded shadow-2xl shadow-white/10"
-        src={image}
-        alt={`captura de pantalla del proyecto ${title}`}
-      />
+      <a href={link}>
+        <img
+          class="rounded shadow-2xl shadow-white/10"
+          src={image}
+          alt={`captura de pantalla del proyecto ${title}`}
+        />
+      </a>
     </article>
   ))
 }
