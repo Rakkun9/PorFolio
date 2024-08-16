@@ -87,7 +87,7 @@ const PROJECTS = [
     title: "TranslaSite",
     description:
       "TranslaSite es una plataforma impulsada por inteligencia artificial que ofrece traducciones rápidas y precisas de textos e imágenes. Utilizando la tecnología avanzada de Gemini-Flash, asegura que las traducciones mantengan el sentido y matices originales. La interfaz es minimalista e intuitiva, ideal para usuarios de todos los niveles que buscan romper barreras lingüísticas de manera sencilla y eficiente.",
-    link: "https://tabler.io/icons",
+    link: "https://translasite.vercel.app/",
     github: "https://github.com/tabler/tabler-icons",
     image: "/projects/vglProyecto3.webp",
     tags: [
@@ -107,8 +107,8 @@ const PROJECTS = [
     title: "Control De Usuarios",
     description:
       "Una aplicación web desarrollada en Java con Spring que permite mostrar usuarios junto con sus ítems. El control de usuarios se gestiona a través de una API REST, implementada mediante un modelo Vista-Controlador (MVC). Se utilizó tokenización JWT para la autenticación de usuarios. En el frontend, el tratamiento y la recepción de datos se realizaron utilizando JavaScript, empleando una plantilla para los estilos y la estructura HTML.",
-    link: "",
-    github: "https://github.com/tabler/tabler-icons",
+    link: "https://github.com/Rakkun9/JavaSpring_Control_de_usuarios",
+    github: "https://github.com/Rakkun9/JavaSpring_Control_de_usuarios",
     image: "/projects/vglProyecto2.webp",
     tags: [
       TAGS.HTML,
@@ -123,8 +123,8 @@ const PROJECTS = [
     title: "AnimeTalks",
     description:
       "Una página web dedicada a la creación y publicación de artículos relacionados con el anime. Los usuarios tienen la capacidad de registrarse, eliminar su cuenta, actualizar su contraseña e iniciar sesión nuevamente. La página web fue desarrollada utilizando HTML, CSS, JavaScript, PHP, PHPMyAdmin y MySQL. PHP se empleó para realizar consultas a la base de datos, mientras que los demás componentes se utilizaron para desarrollar las funcionalidades básicas del sitio web.",
-    link: "https://animetalksforum.000webhostapp.com/AnimeTalks/index.php",
-    github: "https://github.com/Rakkun9/AnimeTalks",
+    link: "https://github.com/Rakkun9/AnimeTalks-web-page",
+    github: "https://github.com/Rakkun9/AnimeTalks-web-page",
     image: "/projects/vglProyecto1.webp",
     tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.PHP, TAGS.MYSQL],
   },
@@ -132,7 +132,7 @@ const PROJECTS = [
 ---
 
 {
-  PROJECTS.map(({ title, description, tags, image }) => (
+  PROJECTS.map(({ title, description, tags, image, link }) => (
     <article>
       <h3 class="text-2xl font-semibold text-yellow-200 mb-2 mt-10 ">
         {title}
@@ -150,6 +150,10 @@ const PROJECTS = [
           </li>
         ))}
       </ul>
+      <a
+        href={link}
+        class="bg-[#2b2727] text-white py-2 px-4 rounded-full inline-block mb-4"
+        >Ver proyecto</a>
       <img
         class="rounded shadow-2xl shadow-white/10"
         src={image}
