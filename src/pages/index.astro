@@ -15,15 +15,15 @@ import Certification from "../components/Certification.astro";
 ---
 
 <Layout
-  title="Portfolio Nicolay - Desarrollador y Programador"
-  description="Contrata a Nicolay para la creación de diferentes tipos de aplicaciones únicas"
+  title="Portfolio Nicolay - Software Engineer & FullStack Developer"
+  description="Contrata a Juan Nicolay Buitrago para el desarrollo de aplicaciones escalables, microservicios y soluciones FullStack."
 >
-  <main class="px-4 ">
+  <main class="px-4">
     <SectionContainer class="py-44 pb-32">
       <img
         class="rounded-full w-12 h-12 mb-4"
-        src="https://github.com/Rakkun9.png"  
-        alt="personal photo"
+        src="https://github.com/Rakkun9.png"
+        alt="Juan Nicolay Buitrago"
       />
       <h1
         class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
@@ -38,15 +38,16 @@ import Certification from "../components/Certification.astro";
         >
       </h1>
       <h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
-        <span>6 meses de experiencia.</span><span class="text-yellow-200/90">
-          Desarrollador Fullstack</span
-        ><span class="text-red-200/90">
-          y Estudiante de Ingenería de Software.
+        <span class="text-white">Más de 2 años de experiencia.</span>
+        <span class="text-yellow-200/90">
+          Desarrollador FullStack e Ingeniero de Software en formación.</span
+        >
+        <span class="text-red-200/90">
+          Especializado en Microservicios con Docker, Kubernetes e Istio.
         </span>
         <span class="opacity-75">
-          Especializado en buscar las mejores soluciones.</span
+          Apasionado por crear soluciones tecnológicas robustas y escalables.</span
         >
-        <!-- Quit the span to get back the white text -->
       </h2>
       <nav class="flex gap-4 mt-8 flex-wrap">
         <Social href="https://www.linkedin.com/in/nicolaybuitrago">
@@ -72,16 +73,12 @@ import Certification from "../components/Certification.astro";
         <Code class="size-7" /> Proyectos
       </h2>
       <Projects />
-    </SectionContainer> 
-    <SectionContainer id ="certificaciones">
-      <Certification>
-        
-      </Certification>
+    </SectionContainer>
+    <SectionContainer id="certificaciones">
+      <Certification />
     </SectionContainer>
     <SectionContainer id="contacto">
-      <Contact >
-      </Contact>
+      <Contact />
     </SectionContainer>
-    
   </main>
 </Layout>
