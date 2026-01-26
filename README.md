@@ -1,5 +1,9 @@
 # Astro Starter Kit: Basics
 
+# Acceso a la pagina desplegada
+
+https://portfolio-nicolay.netlify.app/
+
 ```sh
 npm create astro@latest -- --template basics
 ```
