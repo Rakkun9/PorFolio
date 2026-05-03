@@ -12,7 +12,7 @@ const { description, title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={Astro.url.pathname.startsWith('/en') ? 'en' : 'es'}>
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
@@ -20,17 +20,56 @@ const { description, title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+
+    <!-- SEO & Open Graph Tags -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:image" content="/projects/vglProyecto3.webp" /> <!-- Usa una imagen representativa -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="/projects/vglProyecto3.webp" />
+
+    <!-- Detección inteligente de idioma -->
+    <script is:inline>
+      const browserLang = navigator.language || navigator.userLanguage;
+      const currentPath = window.location.pathname;
+
+      if (browserLang.startsWith('en') && currentPath === '/' && !sessionStorage.getItem('langAutoRedirect')) {
+        sessionStorage.setItem('langAutoRedirect', 'true');
+        window.location.replace('/en');
+      }
+    </script>
   </head>
 
   <body>
     <!-- This is the background of the portfolio -->
     <div
-      class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+      class="fixed inset-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
     >
     </div>
     <Header />
     <slot />
     <Footer />
+
+    <!-- Intersection Observer Animaciones (Fade-in on scroll) -->
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.remove('opacity-0', 'translate-y-10');
+              entry.target.classList.add('opacity-100', 'translate-y-0');
+              // Opcional: observer.unobserve(entry.target) si solo quieres que anime una vez
+            }
+          });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+      });
+    </script>
   </body>
 </html>
 

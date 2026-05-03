@@ -1,5 +1,7 @@
 ---
-const CERTIFICATION = [
+const currentLang = Astro.url.pathname.startsWith('/en') ? 'en' : 'es';
+
+const CERTIFICATION_ES = [
   {
     type: "Oracle - Completado",
     title: "Oracle Next Education",
@@ -64,6 +66,74 @@ const CERTIFICATION = [
     description: "Certificado inglés B2 Upper to Intermediate",
   },
 ];
+
+const CERTIFICATION_EN = [
+  {
+    type: "Oracle - Completed",
+    title: "Oracle Next Education",
+    time: "Completed: July 17, 2024",
+    description:
+      "Oracle scholarship providing full training in modern technologies like Spring.",
+  },
+  {
+    type: "Oracle - Completed",
+    title: "Java Foundations",
+    time: "Completed: February 25, 2023",
+    description: "Course covering basic and fundamental programming concepts.",
+  },
+  {
+    type: "Oracle - Completed",
+    title: "Java Fundamentals",
+    time: "Completed: October 9, 2022",
+    description: "Course on technologies and data structures.",
+  },
+  {
+    type: "Oracle - Completed",
+    title: "Java Programming",
+    time: "Completed: November 18, 2023",
+    description: "Course on programming logic.",
+  },
+  {
+    type: "Oracle - Completed",
+    title: "Database Foundations",
+    time: "Completed: October 7, 2022",
+    description: "Course on fundamental Oracle database commands.",
+  },
+  {
+    type: "Oracle - Completed",
+    title: "Database Design",
+    time: "Completed: April 16, 2023",
+    description:
+      "Fundamental course on database learning and optimization.",
+  },
+  {
+    type: "Platzi - Completed",
+    title: "Professional Git & GitHub Course",
+    time: "Completed: October 30, 2022",
+    description:
+      "Specialized course on Git and GitHub learning and best practices.",
+  },
+  {
+    type: "ScrumStudy - Completed",
+    title: "Scrum Fundamentals",
+    time: "Completed: April 28, 2022",
+    description: "Course on the Scrum methodology.",
+  },
+  {
+    type: "Cisco - Completed",
+    title: "Introduction to IoT",
+    time: "Completed: May 21, 2022",
+    description: "Course covering the importance and impact of IoT.",
+  },
+  {
+    type: "EF SET - Completed",
+    title: "EFSET English Certificate",
+    time: "Completed: August 22, 2022",
+    description: "B2 Upper-Intermediate English certification.",
+  },
+];
+
+const CERTIFICATION = currentLang === 'en' ? CERTIFICATION_EN : CERTIFICATION_ES;
 ---
 
 <section class="antialiased">
@@ -72,11 +142,12 @@ const CERTIFICATION = [
       <h2
         class="text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl"
       >
-        Certificaciones
+        {currentLang === 'en' ? "Certifications" : "Certificaciones"}
       </h2>
       <p class="mt-4 text-base font-normal text-sky-200/80 sm:text-xl">
-        Certificaciones sólidas, soluciones integrales: Construyendo el futuro
-        tecnológico, una plataforma a la vez
+        {currentLang === 'en' 
+          ? "Solid certifications, comprehensive solutions: Building the technological future, one platform at a time" 
+          : "Certificaciones sólidas, soluciones integrales: Construyendo el futuro tecnológico, una plataforma a la vez"}
       </p>
     </div>
 

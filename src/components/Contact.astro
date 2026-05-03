@@ -1,6 +1,5 @@
 ---
-
-
+const currentLang = Astro.url.pathname.startsWith('/en') ? 'en' : 'es';
 ---
 
 <section>
@@ -8,19 +7,19 @@
     <h2
       class="mb-4 text-4xl tracking-tight font-extrabold text-center text-white"
     >
-      Contacto
+      {currentLang === 'en' ? "Contact" : "Contacto"}
     </h2>
     <p class="mb-8 lg:mb-16 font-light text-center text-white sm:text-xl">
-      <span>¿Tienes un proyecto en mente?</span>
-      <span class="text-yellow-200/90">¿Quieres hablar de oportunidades?</span>
+      <span>{currentLang === 'en' ? "Got a project in mind?" : "¿Tienes un proyecto en mente?"}</span>
+      <span class="text-yellow-200/90">{currentLang === 'en' ? " Want to discuss opportunities?" : "¿Quieres hablar de oportunidades?"}</span>
       <span> </span>
-      <span class="text-sky-200/80"> ¿Necesitas más información? </span> ¡Ponte en
-      contacto conmigo!
+      <span class="text-sky-200/80"> {currentLang === 'en' ? "Need more intel?" : "¿Necesitas más información?"} </span> 
+      {currentLang === 'en' ? "Get in touch with me!" : "¡Ponte en contacto conmigo!"}
     </p>
     <form action="https://formspree.io/f/meqyykbz" class="space-y-8" method="POST" >
       <div>
         <label for="email" class="block mb-2 text-sm font-medium text-white"
-          >Correo</label
+          >{currentLang === 'en' ? "Email" : "Correo"}</label
         >
         <input
           type="email"
@@ -33,19 +32,19 @@
       </div>
       <div>
         <label for="subject" class="block mb-2 text-sm font-medium text-white"
-          >Titulo</label
+          >{currentLang === 'en' ? "Subject" : "Titulo"}</label
         >
         <input
           type="text"
           id="subject"
           class="block p-3 w-full text-sm text-white bg-[#091723] rounded-lg border border-[#2A4979] shadow-sm focus:ring-primary-500 focus:border-primary-500"
-          placeholder="Déjame saber en qué te puedo ayudar"
+          placeholder={currentLang === 'en' ? "Let me know how I can help you" : "Déjame saber en qué te puedo ayudar"}
           required
         />
       </div>
       <div class="sm:col-span-2">
         <label for="message" class="block mb-2 text-sm font-medium text-white"
-          >Mensaje</label
+          >{currentLang === 'en' ? "Message" : "Mensaje"}</label
         >
         <textarea
           name="message"
@@ -57,7 +56,7 @@
       <button
         type="submit"
         class="py-3 px-5 text-sm font-medium text-center text-white bg-[#091723] rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300"
-        >Enviar mensaje</button
+        >{currentLang === 'en' ? "Send message" : "Enviar mensaje"}</button
       >
     </form>
   </div>

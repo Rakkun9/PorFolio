@@ -1,29 +1,58 @@
 ---
 import ExperienceItem from "./ExperienceItem.astro";
 
-const EXPERIENCE = [
+const currentLang = Astro.url.pathname.startsWith('/en') ? 'en' : 'es';
+
+const EXPERIENCE_ES = [
   {
     date: "Septiembre 2024 - Actualidad",
     title: "Analista de desarrollo y soporte de aplicaciones",
+    company: "Empresa", 
     description:
-      "Responsable del ciclo de vida completo del software, desde el análisis hasta el despliegue. He optimizado la documentación técnica mediante diagramas UML y garantizado la estabilidad de aplicaciones críticas internas, impactando positivamente en la producción y comunicación con clientes.",
+      "Responsable del ciclo de vida completo del software, desde la fase de análisis hasta el despliegue a producción. He optimizado la documentación técnica mediante diagramas UML y garantizado la estabilidad de aplicaciones críticas internas, impactando positivamente en el flujo de trabajo y la comunicación proactiva con los clientes.",
     link: "",
   },
   {
     date: "Febrero 2024 - Julio 2024",
     title: "Desarrollador Web - Proyecto Independiente (Groc)",
     description:
-      "Desarrollo integral de una plataforma e-commerce con procesamiento de pagos eficiente. Configuré el entorno de producción y optimicé el flujo de transacciones utilizando tecnologías como WordPress, WooCommerce y JavaScript.",
+      "Desarrollo integral de una plataforma e-commerce con enfoque en procesamiento de pagos eficiente. Lideré la configuración del entorno de producción y optimicé el flujo de transacciones utilizando tecnologías como WordPress, WooCommerce y customización avanzada con JavaScript.",
     link: "",
   },
   {
     date: "Agosto 2023 - Febrero 2024",
-    title: "Practicante de desarrollo",
+    title: "Practicante de Desarrollo de Software",
     description:
-      "Diseñé y desarrollé un sistema de inventario FullStack personalizado para soporte técnico y atención al cliente. Logré una mejora del 40% en la actualización de seguridad (antivirus) de la sede Bogotá y optimicé el control de activos de la compañía.",
+      "Diseñé y desarrollé un sistema de control de inventario FullStack a medida para el equipo de soporte técnico y atención al cliente. Implementé automatizaciones que resultaron en una mejora del 40% en la actualización de seguridad (antivirus) para la sede de Bogotá, optimizando la auditoría y control de activos de la compañía.",
     link: "",
   },
 ];
+
+const EXPERIENCE_EN = [
+  {
+    date: "September 2024 - Present",
+    title: "Application Development and Support Analyst",
+    description:
+      "Responsible for the full software development lifecycle, from analysis to production deployment. Optimized technical documentation using UML diagrams and ensured the stability of critical internal applications, positively impacting workflows and proactive client communication.",
+    link: "",
+  },
+  {
+    date: "February 2024 - July 2024",
+    title: "Web Developer - Independent Project (Groc)",
+    description:
+      "End-to-end development of an e-commerce platform focused on efficient payment processing. Managed the production environment configuration and optimized the transaction flow using technologies like WordPress, WooCommerce, and advanced JavaScript customization.",
+    link: "",
+  },
+  {
+    date: "August 2023 - February 2024",
+    title: "Software Development Intern",
+    description:
+      "Designed and developed a custom FullStack inventory control system for the tech support and customer service team. Implemented automations that resulted in a 40% improvement in security updates (antivirus) for the Bogotá branch, optimizing the company's asset audit and control.",
+    link: "",
+  },
+];
+
+const EXPERIENCE = currentLang === 'en' ? EXPERIENCE_EN : EXPERIENCE_ES;
 ---
 
 <ol class="relative border-s border-gray-200">

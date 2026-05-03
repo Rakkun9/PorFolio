@@ -1,22 +1,22 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Badge from "../components/Badge.astro";
-import Github from "../icons/Github.astro";
-import LinkedIn from "../icons/LinkedIn.astro";
-import Social from "../components/Social.astro";
-import Mail from "../icons/Mail.astro";
-import Experience from "../components/Experience.astro";
-import SectionContainer from "../components/SectionContainer.astro";
-import BriefCase from "../icons/BriefCase.astro";
-import Code from "../icons/Code.astro";
-import Projects from "../components/Projects.astro";
-import Contact from "../components/Contact.astro";
-import Certification from "../components/Certification.astro";
+import Layout from "../../layouts/Layout.astro";
+import Badge from "../../components/Badge.astro";
+import Github from "../../icons/Github.astro";
+import LinkedIn from "../../icons/LinkedIn.astro";
+import Social from "../../components/Social.astro";
+import Mail from "../../icons/Mail.astro";
+import Experience from "../../components/Experience.astro";
+import SectionContainer from "../../components/SectionContainer.astro";
+import BriefCase from "../../icons/BriefCase.astro";
+import Code from "../../icons/Code.astro";
+import Projects from "../../components/Projects.astro";
+import Contact from "../../components/Contact.astro";
+import Certification from "../../components/Certification.astro";
 ---
 
 <Layout
-  title="Portfolio Nicolay - Software Engineer & FullStack Developer"
-  description="Contrata a Juan Nicolay Buitrago para el desarrollo de aplicaciones escalables, microservicios y soluciones FullStack."
+  title="Nicolay's Portfolio - Software Engineer & FullStack Developer"
+  description="Hire Juan Nicolay Buitrago for the development of scalable applications, microservices, and FullStack solutions."
 >
   <main class="px-4">
     <SectionContainer class="py-44 pb-32">
@@ -28,27 +28,25 @@ import Certification from "../components/Certification.astro";
       <h1
         class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
       >
-        Hey, Soy Nicolay <a
+        Hey, I'm Nicolay <a
           href="https://www.linkedin.com/in/nicolaybuitrago"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Perfil de LinkedIn de Nicolay"
+          aria-label="Nicolay's LinkedIn Profile"
           class="flex justify-center items-center hover:scale-105 transition"
         >
-          <Badge>Disponible para trabajar</Badge></a
+          <Badge>Available for work</Badge></a
         >
       </h1>
       <h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
-        <span class="text-white">Más de 2 años de experiencia.</span>
+        <span class="text-white">Over 2 years of experience.</span>
         <span class="text-yellow-200/90">
-          Desarrollador FullStack e Ingeniero de Software en formación.</span
-        >
+          FullStack Developer and Software Engineer in training.</span>
         <span class="text-red-200/90">
-          Especializado en Arquitecturas de Microservicios con Docker, Kubernetes e Istio.
+          Specialized in Microservices Architectures with Docker, Kubernetes, and Istio.
         </span>
         <span class="opacity-80">
-          Apasionado por crear soluciones tecnológicas robustas, eficientes y escalables.</span
-        >
+          Passionate about building robust, efficient, and scalable technological solutions.</span>
       </h2>
       <nav class="flex gap-4 mt-8 flex-wrap">
         <Social href="https://www.linkedin.com/in/nicolaybuitrago" aria-label="LinkedIn">
@@ -57,33 +55,33 @@ import Certification from "../components/Certification.astro";
         <Social href="https://www.github.com/Rakkun9/" aria-label="GitHub">
           <Github class="size-4 md:size-6" />Github
         </Social>
-        <Social href="mailto:jnicolaybv@gmail.com" aria-label="Enviar correo electrónico">
-          <Mail class="size-4 md:size-6" />Contactar
+        <Social href="mailto:jnicolaybv@gmail.com" aria-label="Send an email">
+          <Mail class="size-4 md:size-6" />Contact me
         </Social>
-        <Social href="/CV_JuanNicolay_ATS.pdf" download="CV_JuanNicolay.pdf" aria-label="Descargar mi Curriculum Vitae">
+        <Social href="/CV_JuanNicolay_ATS_EN.pdf" download="CV_JuanNicolay_EN.pdf" aria-label="Download my Curriculum Vitae">
           <svg class="size-4 md:size-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-          Descargar CV
+          Download CV
         </Social>
       </nav>
     </SectionContainer>
 
     <SectionContainer id="experiencia">
       <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
-        <BriefCase class="size-7" /> Experiencia laboral
+        <BriefCase class="size-7" /> Work Experience
       </h2>
-      <Experience />
+      <Experience lang="en" />
     </SectionContainer>
     <SectionContainer id="proyectos">
       <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
-        <Code class="size-7" /> Proyectos
+        <Code class="size-7" /> Projects
       </h2>
-      <Projects />
+      <Projects lang="en" />
     </SectionContainer>
     <SectionContainer id="certificaciones">
-      <Certification />
+      <Certification lang="en" />
     </SectionContainer>
     <SectionContainer id="contacto">
-      <Contact />
+      <Contact lang="en" />
     </SectionContainer>
   </main>
 </Layout>

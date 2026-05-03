@@ -82,7 +82,10 @@ const TAGS = {
     icon: PHP,
   },
 };
-const PROJECTS = [
+
+const currentLang = Astro.url.pathname.startsWith('/en') ? 'en' : 'es';
+
+const PROJECTS_ES = [
   {
     title: "TranslaSite",
     description:
@@ -97,7 +100,6 @@ const PROJECTS = [
       TAGS.TAILWIND,
       TAGS.NODEJS,
       TAGS.TYPESCRIPT,
-      TAGS.JAVASCRIPT,
       TAGS.ASTRO,
       TAGS.GEMINI,
       TAGS.VERCEL,
@@ -129,20 +131,69 @@ const PROJECTS = [
     tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.PHP, TAGS.MYSQL],
   },
 ];
+
+const PROJECTS_EN = [
+  {
+    title: "TranslaSite",
+    description:
+      "TranslaSite is an AI-powered platform offering fast and accurate translations of texts and images. Utilizing the advanced Gemini-Flash technology, it ensures translations maintain their original meaning and nuances. The minimalist and intuitive interface is ideal for users of all levels looking to seamlessly overcome language barriers.",
+    link: "https://translasite.vercel.app/",
+    github: "https://github.com/tabler/tabler-icons",
+    image: "/projects/vglProyecto3.webp",
+    tags: [
+      TAGS.HTML,
+      TAGS.CSS,
+      TAGS.JAVASCRIPT,
+      TAGS.TAILWIND,
+      TAGS.NODEJS,
+      TAGS.TYPESCRIPT,
+      TAGS.ASTRO,
+      TAGS.GEMINI,
+      TAGS.VERCEL,
+    ],
+  },
+  {
+    title: "User Management System",
+    description:
+      "A web application developed in Java with Spring that displays users along with their items. User management is handled through a REST API implemented using a Model-View-Controller (MVC) pattern. JWT tokenization was used for user authentication. On the frontend, data processing and reception were done using JavaScript, employing a template for styles and HTML structure.",
+    link: "https://github.com/Rakkun9/JavaSpring_Control_de_usuarios",
+    github: "https://github.com/Rakkun9/JavaSpring_Control_de_usuarios",
+    image: "/projects/vglProyecto2.webp",
+    tags: [
+      TAGS.HTML,
+      TAGS.CSS,
+      TAGS.JAVASCRIPT,
+      TAGS.JAVA,
+      TAGS.SPRING,
+      TAGS.MYSQL,
+    ],
+  },
+  {
+    title: "AnimeTalks",
+    description:
+      "A website dedicated to creating and publishing anime-related articles. Users can register, delete their accounts, update their passwords, and log back in. The website was developed using HTML, CSS, JavaScript, PHP, PHPMyAdmin, and MySQL. PHP was used for database queries, while the other components were used to build the core features of the website.",
+    link: "https://github.com/Rakkun9/AnimeTalks-web-page",
+    github: "https://github.com/Rakkun9/AnimeTalks-web-page",
+    image: "/projects/vglProyecto1.webp",
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.PHP, TAGS.MYSQL],
+  },
+];
+
+const PROJECTS = currentLang === 'en' ? PROJECTS_EN : PROJECTS_ES;
 ---
 
 {
   PROJECTS.map(({ title, description, tags, image, link }) => (
-    <article>
-      <h3 class="text-2xl font-semibold text-yellow-200 mb-2 mt-10 ">
-        <a href={link}>{title}</a>
+    <article class="mb-14">
+      <h3 class="text-2xl font-semibold text-yellow-200 mb-2 mt-10">
+        <a href={link} target="_blank" rel="noopener noreferrer" class="hover:underline">{title}</a>
       </h3>
-      <p class="text-lg mb-4 text-pretty">{description}</p>
-      <ul class="flex flex-wrap gap-x-2 flex-row mb-8 ">
+      <p class="text-lg mb-4 text-pretty text-gray-300">{description}</p>
+      <ul class="flex flex-wrap gap-x-2 flex-row mb-8">
         {tags.map((tag) => (
           <li>
             <span
-              class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 mb-2`}
+              class={`flex items-center gap-x-2 rounded-full text-xs font-semibold ${tag.class} py-1 px-3 mb-2 transition hover:scale-105`}
             >
               <tag.icon class="size-4" />
               {tag.name}
@@ -150,11 +201,11 @@ const PROJECTS = [
           </li>
         ))}
       </ul>
-      <a href={link}>
+      <a href={link} target="_blank" rel="noopener noreferrer">
         <img
-          class="rounded shadow-2xl shadow-white/10"
+          class="rounded-xl shadow-2xl shadow-white/10 hover:shadow-white/20 hover:scale-[1.03] transition-all object-cover h-auto w-full"
           src={image}
-          alt={`captura de pantalla del proyecto ${title}`}
+          alt={`Captura de pantalla del proyecto ${title}`}
         />
       </a>
     </article>
